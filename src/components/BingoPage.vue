@@ -40,7 +40,6 @@
       </v-row>
     </div>
 
-    <!-- Botões grandes no rodapé -->
     <v-row class="mt-6" justify="center" align="center" no-gutters>
       <v-col cols="12" sm="6" class="mb-2 mb-sm-0 pa-5">
         <v-btn block color="primary" size="x-large" @click="sortearNumero">🎲 Sortear Número</v-btn>
@@ -50,7 +49,6 @@
       </v-col>
     </v-row>
 
-    <!-- ALERTA sem opacity -->
     <v-overlay v-model="mostrarAlerta" class="overlayOpacity d-flex align-center justify-center" :scrim="true" persistent>
       <div class="text-center">
         <div class="text-h5 text-sm-h2 font-weight-bold text-white mb-2">
