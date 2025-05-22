@@ -2,9 +2,9 @@
   <v-container class="pa-2 pa-sm-4 d-flex flex-column justify-space-between" style="min-height: 100vh;">
     <div>
       <v-row justify="center" v-if="ultimoNumero !== null">
-        <h2 class="text-h6 text-sm-h4 font-weight-bold text-center">
-          Último número: {{ letraDoNumero(ultimoNumero) }}{{ ultimoNumero }}
-        </h2>
+        <h1 class="font-weight-bold text-center">
+          Último número: {{ letraDoNumero(ultimoNumero) }} {{ ultimoNumero }}
+        </h1>
       </v-row>
 
       <v-row class="mt-4" justify="center" dense>
@@ -19,19 +19,19 @@
           <v-card
             v-for="num in numerosPorColuna[coluna]"
             :key="num"
-            class="mb-2"
+            class="mb-2 ml-1"
             :color="numeroColor(num)"
             :elevation="ultimoNumero === num ? 12 : 2"
-            height="60"
+            height="5vh"
           >
             <v-card-text
-              class="d-flex align-center justify-center"
+              class="d-flex align-center justify-center pa-0"
               :class="{
                 'text-white': numerosSorteados.includes(num),
                 'font-weight-bold': ultimoNumero === num,
                 'text-black': !numerosSorteados.includes(num)
               }"
-              style="font-size: 20px;"
+              style="font-size: 3.75vh;"
             >
               {{ num }}
             </v-card-text>
@@ -40,7 +40,7 @@
       </v-row>
     </div>
 
-    <v-row class="mt-6" justify="center" align="center" no-gutters>
+    <v-row justify="center" align="center" no-gutters>
       <v-col cols="12" sm="6" class="mb-2 mb-sm-0 pa-5">
         <v-btn block color="primary" size="x-large" @click="sortearNumero">🎲 Sortear Número</v-btn>
       </v-col>
@@ -58,7 +58,7 @@
           class="font-weight-black text-yellow"
           :style="{ fontSize: isMobile ? '64px' : '120px' }"
         >
-          {{ letraDoNumero(ultimoNumero) }}{{ ultimoNumero }}
+          {{ letraDoNumero(ultimoNumero) }} {{ ultimoNumero }}
         </div>
         <div class="d-flex justify-center">
           <v-img
